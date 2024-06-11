@@ -1,0 +1,52 @@
+.door {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  align-items: center;
+  margin: 0.5rem;
+}
+
+.number {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.floor {
+  width: 10rem;
+  height: 1rem;
+  background-color: gray;
+}
+
+.front {
+  width: var(--door-width);
+  height: var(--door-height);
+  background-color: brown;
+  position: relative;
+  border: 2px solid red;
+  border-bottom: none;
+}
+
+.front:hover {
+  cursor: pointer;
+}
+
+.selected {
+  border: 2px solid yellow;
+  border-bottom: none;
+}
+
+.knob {
+  width: 10px;
+  height: 10px;
+  right: 5%;
+  top: 50%;
+  border-radius: 50%;
+  position: absolute;
+  background-color: yellow;
+}
+
+.knob:hover {
+  cursor: pointer;
+}
