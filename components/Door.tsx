@@ -1,24 +1,24 @@
 "use client";
-import { useState } from "react";
 import style from "../styles/Door.module.css";
+import { DoorModel } from "../model/DoorModel";
 
 type DoorProps = {
-  number: number;
+  door: DoorModel;
 };
 
-const Door = ({ number }: DoorProps) => {
-  const [isSelected, setIsSelected] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
-  const selected = isSelected ? style.selected : "";
+const Door = ({ door }: DoorProps) => {
+  const selected = door.getIsSelected() ? style.selected : "";
 
   const handleSelected = () => {
-    setIsSelected((prev) => !prev);
+    door.alterIsSelected();
   };
 
   return (
     <div className={style.door}>
       <div onClick={handleSelected} className={`${style.front} ${selected}`}>
-        <div className={style.number}>{isOpen ? "" : number}</div>
+        <div className={style.number}>
+          {door.getIsOpen() ? "" : door.getNumber()}
+        </div>
         <div className={style.knob}></div>
       </div>
       <div className={style.floor} />

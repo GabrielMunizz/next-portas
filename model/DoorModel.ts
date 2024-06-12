@@ -1,4 +1,4 @@
-export class Door {
+export class DoorModel {
   private number: number;
   private haveGift: boolean;
   private isSelected: boolean;
@@ -35,18 +35,18 @@ export class Door {
   alterIsOpen() {
     const isOpen = !this.getIsOpen;
 
-    return new Door(this.number, this.haveGift, this.isSelected, isOpen);
+    return new DoorModel(this.number, this.haveGift, this.isSelected, isOpen);
   }
 
   alterHaveGift() {
     const haveGift = !this.getHaveGift;
 
-    return new Door(this.number, haveGift, this.isSelected, this.isOpen);
+    return new DoorModel(this.number, haveGift, this.isSelected, this.isOpen);
   }
 
   alterIsSelected() {
     const isSelected = !this.getIsSelected;
 
-    return new Door(this.number, this.haveGift, isSelected, this.isOpen);
+    return new DoorModel(this.number, this.haveGift, isSelected, this.isOpen);
   }
 }
