@@ -1,0 +1,80 @@
+.menuContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+  background-color: #000;
+  position: absolute;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 50%;
+  height: 20rem;
+  border-radius: 7px;
+}
+
+.display {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 50%;
+}
+
+.title {
+  background-color: #6832e6;
+  border-radius: 7px 0 0 0;
+  border: 1px solid #000;
+}
+
+.selectNumber {
+  background-color: #9c1bc3;
+  border: 1px solid #000;
+  border-radius: 0 7px 0 0;
+}
+
+.selectNumber input {
+  width: 3rem;
+  font-size: 1rem;
+  margin-top: 1rem;
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 7px;
+  border: none;
+  background-color: #fff;
+  color: #000;
+}
+
+.filler {
+  background-color: #e64774;
+  border: 1px solid #000;
+  border-radius: 0 0 0 7px;
+}
+
+.start {
+  background-color: #f7a468;
+  border: 1px solid #000;
+  border-radius: 0 0 7px 0;
+}
+
+.start button {
+  width: 120px;
+  height: 40px;
+  border-radius: 7px;
+  border: none;
+  background-color: #6832e6;
+  font-size: 1rem;
+  transition: 0.3s ease;
+}
+
+.start button:hover {
+  cursor: pointer;
+  border-radius: 0px;
+  background-color: #5a21e0;
+}

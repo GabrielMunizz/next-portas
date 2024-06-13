@@ -6,6 +6,6 @@ export type Door = {
 };
 
 export type DoorAction =
-  | { type: "SELECT_DOOR"; payload: boolean }
-  | { type: "OPEN_DOOR"; payload: boolean }
-  | { type: "HAVE_GIFT"; payload: boolean };
+  | { type: "SELECT_DOOR" }
+  | { type: "OPEN_DOOR" }
+  | { type: "HAVE_GIFT" };

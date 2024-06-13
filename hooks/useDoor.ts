@@ -14,17 +14,17 @@ const useDoor = (doorNumber: number) => {
       case "SELECT_DOOR":
         return {
           ...state,
-          isSelected: action.payload,
+          isSelected: !state.isSelected,
         };
       case "OPEN_DOOR":
         return {
           ...state,
-          isOpen: action.payload,
+          isOpen: !state.isOpen,
         };
       case "HAVE_GIFT":
         return {
           ...state,
-          haveGift: action.payload,
+          haveGift: !state.haveGift,
         };
       default:
         return state;
