@@ -73,7 +73,7 @@
 
 .buttonContainer button:hover {
   cursor: pointer;
-  border-radius: 0px;
+  background-color: rgb(191, 191, 191);
 }
 
 .filler {

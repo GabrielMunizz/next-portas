@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Door from "../../components/Door";
 import styles from "../../styles/Home.module.css";
 import Menu from "../../components/Menu";
