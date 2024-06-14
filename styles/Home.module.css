@@ -20,3 +20,23 @@
   align-items: center;
   margin-top: 3rem;
 }
+
+.reload {
+  margin-top: 2rem;
+}
+
+.reload button {
+  width: 120px;
+  height: 40px;
+  font-size: 1rem;
+  background-color: crimson;
+  border: none;
+  border-radius: 7px;
+  transition: 0.3s ease;
+}
+
+.reload button:hover {
+  cursor: pointer;
+  border-radius: 0px;
+  background-color: rgb(192, 16, 51);
+}

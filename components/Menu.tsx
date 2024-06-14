@@ -1,26 +1,34 @@
-import { ChangeEvent, Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction } from "react";
 import styles from "../styles/Menu.module.css";
 
 type MenuProps = {
-  numberOfDoors: string;
-  setNumberOfDoors: Dispatch<SetStateAction<string>>;
+  numberOfDoors: number;
+  setNumberOfDoors: Dispatch<SetStateAction<number>>;
   setIsMenuOpen: Dispatch<SetStateAction<boolean>>;
   setSelectedNumber: Dispatch<SetStateAction<number>>;
+  setHaveGift: Dispatch<SetStateAction<number>>;
 };
 
 const Menu = ({
   setIsMenuOpen,
   setNumberOfDoors,
   setSelectedNumber,
+  setHaveGift,
   numberOfDoors,
 }: MenuProps) => {
-  const handleChange = ({ target }: ChangeEvent<HTMLInputElement>) => {
-    setNumberOfDoors(target.value);
+  const handleIncrement = () => {
+    setNumberOfDoors((prev) => (prev < 15 ? prev + 1 : 15));
+  };
+
+  const handleDecrement = () => {
+    setNumberOfDoors((prev) => (prev > 3 ? prev - 1 : 3));
   };
 
   const handleStartGame = () => {
+    const random = Math.floor(Math.random() * numberOfDoors + 1);
+    setHaveGift(random);
+    setSelectedNumber(numberOfDoors);
     setIsMenuOpen(false);
-    setSelectedNumber(+numberOfDoors);
   };
   return (
     <div className={styles.menuContainer}>
@@ -30,11 +38,18 @@ const Menu = ({
         </div>
         <div className={`${styles.display} ${styles.selectNumber}`}>
           <h3>Select number of doors</h3>
-          <input type="text" value={numberOfDoors} onChange={handleChange} />
+          <h2>{numberOfDoors}</h2>
+          <div className={styles.buttonContainer}>
+            <button onClick={handleDecrement}>-</button>
+            <button onClick={handleIncrement}>+</button>
+          </div>
         </div>
-        <div className={`${styles.display} ${styles.filler}`}></div>
-        <div className={`${styles.display} ${styles.start}`}>
-          <button onClick={handleStartGame}>Start Game</button>
+        <div className={`${styles.display} ${styles.filler}`} />
+        <div
+          onClick={handleStartGame}
+          className={`${styles.display} ${styles.start}`}
+        >
+          <h2>Start</h2>
         </div>
       </div>
     </div>
