@@ -24,7 +24,7 @@ const useDoor = (doorNumber: number) => {
       case "HAVE_GIFT":
         return {
           ...state,
-          haveGift: !state.haveGift,
+          haveGift: true,
         };
       default:
         return state;

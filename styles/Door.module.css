@@ -9,8 +9,9 @@
 .number {
   font-size: 1.5rem;
   text-align: center;
-  margin-top: 1rem;
   width: 100%;
+  position: relative;
+  top: 1rem;
 }
 
 .floor {
@@ -19,12 +20,19 @@
   background-color: gray;
 }
 
-.front {
+.margin {
   width: var(--door-width);
+  height: var(--door-height);
+  position: relative;
+  border: 2px solid red;
+  border-bottom: none;
+}
+
+.front {
+  width: var(--door-width - 1rem);
   height: var(--door-height);
   background-color: brown;
   position: relative;
-  border: 2px solid red;
   border-bottom: none;
 }
 
@@ -49,4 +57,15 @@
 
 .knob:hover {
   cursor: pointer;
+}
+
+.open {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  width: var(--door-width - 1rem);
+  height: var(--door-height);
+  position: relative;
+  background-color: rgb(39, 38, 38);
 }

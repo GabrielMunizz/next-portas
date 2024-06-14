@@ -5,11 +5,13 @@ type MenuProps = {
   numberOfDoors: string;
   setNumberOfDoors: Dispatch<SetStateAction<string>>;
   setIsMenuOpen: Dispatch<SetStateAction<boolean>>;
+  setSelectedNumber: Dispatch<SetStateAction<number>>;
 };
 
 const Menu = ({
   setIsMenuOpen,
   setNumberOfDoors,
+  setSelectedNumber,
   numberOfDoors,
 }: MenuProps) => {
   const handleChange = ({ target }: ChangeEvent<HTMLInputElement>) => {
@@ -18,6 +20,7 @@ const Menu = ({
 
   const handleStartGame = () => {
     setIsMenuOpen(false);
+    setSelectedNumber(+numberOfDoors);
   };
   return (
     <div className={styles.menuContainer}>
